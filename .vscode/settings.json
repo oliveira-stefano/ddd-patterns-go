@@ -1,0 +1,28 @@
+{
+    //opcao para ativar ou desativar a activity bar
+    "workbench.activityBar.visible": true,
+    //Identacao das pastas no workspace
+    "workbench.tree.indent": 18,
+    //Ativar a fonte fira code
+    "editor.fontSize": 16,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    //Impedir que as pastas sejam compactadas
+    "explorer.compactFolders": false,
+    //Pastas que eu nao quero ver no vscode
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+    },    
+    //Terminal com zsh
+     "terminal.integrated.defaultProfile.linux":"zsh",
+    //Como o explorer vai listar as pastas
+     "explorer.sortOrder": "filesFirst",
+    //Estilo do cursor
+     "editor.cursorStyle": "underline",
+    //Lado do workbench
+     "workbench.sideBar.location": "right",
+}
