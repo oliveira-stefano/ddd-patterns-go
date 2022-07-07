@@ -33,6 +33,11 @@ func (o *Order) validate() {
 	if len(o.items) == 0 {
 		panic("Items is empty")
 	}
+	for _, item := range o.items {
+		if item.quantity <= 0 {
+			panic("Item quantity is less or equal 0")
+		}
+	}
 }
 
 func (o *Order) GetTotal() float64 {

@@ -43,11 +43,21 @@ func TestNewOrder_ShouldThrowErrorWhenItemsIsEmpty(t *testing.T) {
 func TestCalculateTotal_ShouldCalculateTotalCorrectly(t *testing.T) {
 
 	item1 := entity.OrderItem{}
-	item1.NewOrderItem("i1", "Item 1", 10.0)
+	item1.NewOrderItem("i1", "Item 1", 10.0, "p1", 2)
 	item2 := entity.OrderItem{}
-	item2.NewOrderItem("i2", "Item 2", 20.0)
+	item2.NewOrderItem("i2", "Item 2", 20.0, "p2", 2)
 	order := entity.Order{}
 	order.NewOrder("123", "123", []entity.OrderItem{item1, item2})
-	assert.Equal(t, 30.0, order.GetTotal(), "Should calculate total correctly")
+	assert.Equal(t, 60.0, order.GetTotal(), "Should calculate total correctly")
 
+}
+
+//Should throw error if the item quantity is less or equal 0
+func TestOrderItem_ShouldThrowErrorIfTheItemQuantityIsLessOrEqual0(t *testing.T) {
+	assert.Panics(t, func() {
+		item := entity.OrderItem{}
+		item.NewOrderItem("i1", "Item 1", 10.0, "p1", 0)
+		order := entity.Order{}
+		order.NewOrder("123", "123", []entity.OrderItem{item})
+	}, "Should throw error if the item quantity is less or equal 0")
 }
