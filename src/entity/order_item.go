@@ -11,3 +11,6 @@ func (o *OrderItem) NewOrderItem(id string, name string, price float64) {
 	o.name = name
 	o.price = price
 }
+func (o *OrderItem) GetPrice() float64 {
+	return o.price
+}

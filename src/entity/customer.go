@@ -42,3 +42,13 @@ func (c *Customer) Validate() {
 func (c *Customer) SetAddress(address Address) {
 	c.address = address
 }
+
+//Get name
+func (c *Customer) GetName() string {
+	return c.name
+}
+
+//IsActive
+func (c *Customer) IsActive() bool {
+	return c.active
+}
