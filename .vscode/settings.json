@@ -2,9 +2,9 @@
     //opcao para ativar ou desativar a activity bar
     "workbench.activityBar.visible": true,
     //Identacao das pastas no workspace
-    "workbench.tree.indent": 18,
+    "workbench.tree.indent": 16,
     //Ativar a fonte fira code
-    "editor.fontSize": 16,
+    "editor.fontSize": 15,
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     //Impedir que as pastas sejam compactadas
@@ -24,5 +24,5 @@
     //Estilo do cursor
      "editor.cursorStyle": "underline",
     //Lado do workbench
-     "workbench.sideBar.location": "right",
+     "workbench.sideBar.location": "right"
 }

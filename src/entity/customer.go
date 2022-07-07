@@ -3,8 +3,8 @@ package entity
 type Customer struct {
 	id      string
 	name    string
-	address string `default:""`
-	active  bool   `default:"false"`
+	address Address
+	active  bool `default:"false"`
 }
 
 // NewCustomer equivalente ao construtor de Customer
@@ -20,8 +20,8 @@ func (c *Customer) ChangeName(name string) {
 }
 
 func (c *Customer) Activate() {
-	if c.address == "" {
-		panic("Address is mandatory to activate a customer")
+	if c.address == (Address{}) {
+		panic("Customer address is required")
 	}
 	c.active = true
 }
@@ -36,4 +36,9 @@ func (c *Customer) Validate() {
 	} else if c.id == "" {
 		panic("Customer id is required")
 	}
+}
+
+//Create a func SetAddress
+func (c *Customer) SetAddress(address Address) {
+	c.address = address
 }
